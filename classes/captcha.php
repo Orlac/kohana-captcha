@@ -431,7 +431,7 @@ abstract class Captcha
 	{
 		// Output html element
 		if ($html === TRUE)
-			return '<img src="'.url::site('captcha/'.Captcha::$config['group']).'" width="'.Captcha::$config['width'].'" height="'.Captcha::$config['height'].'" alt="Captcha" class="captcha" />';
+			return '<img src="'.url::site('captcha/'.Captcha::$config['group']).'" width="'.Captcha::$config['width'].'" height="'.Captcha::$config['height'].'" onclick="this.src=this.src" title="'.I18n::get('reload image').'" alt="Captcha" class="captcha" />';
 
 		// Send the correct HTTP header
         $this->_get_request()->headers['Content-Type'] = 'image/'.$this->image_type;
